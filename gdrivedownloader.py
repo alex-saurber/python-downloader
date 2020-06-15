@@ -16,7 +16,7 @@ def resource_path(relative_path):
     base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
     return os.path.join(base_path, relative_path)
 
-#path to credentials folder
+#path to credentials folder. leaving this in the root dir for now
 credpath = ''
 
 # authorization boilerplate code
@@ -31,7 +31,7 @@ if not creds or creds.invalid:
 
 # DRIVE = discovery.build('drive', 'v3', http=creds.authorize(Http()))
 # if you get the shareable link, the link contains this id, replace the file_id below
-file_id = '0B1nPWClpy7EeNXBrTWxsdXJSMG8'
+file_id = ''
 
 request = discovery.build('drive', 'v3', http=creds.authorize(Http())).files().get_media(fileId=file_id)
 
